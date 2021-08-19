@@ -10,4 +10,5 @@ target 'Login_Photo_Server' do
     pod 'Firebase/Analytics'
     pod 'KakaoSDK'
     pod 'KakaoSDKUser'
+    pod 'SwiftyJSON'
 end

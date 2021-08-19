@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         }
         
     }
-    
+
     
     //폰(시뮬레이터)에 앱이 안깔려 있을때 웹 브라우저를 통해 로그인
     @objc
@@ -83,15 +83,43 @@ class ViewController: UIViewController {
                 //do something
                 _ = user
                 self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
-                
+
                 if let url = user?.kakaoAccount?.profile?.profileImageUrl,
                     let data = try? Data(contentsOf: url) {
                     self.profileImageView.image = UIImage(data: data)
                 }
             }
         }
+//        UserApi.shared.shippingAddresses() { shippingAddresses, error in
+//            if let error = error {
+//                print("주소없음")
+//            }
+//            else {
+//                print("ship() success")
+//                _ = shippingAddresses
+//                self.infoLabel.text = shippingAddresses?.shippingAddresses?.first?.baseAddress
+//            }
+//        }
     }
-
+    public func shippingAddresses(fromUpdatedAt: Int? = nil, pageSize: Int? = nil, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
+       AUTH.responseData(.get,
+                         Urls.compose(path:Paths.userShippingAddress),
+                         parameters: ["from_updated_at": fromUpdatedAt, "page_size": pageSize].filterNil(),
+                         apiType: .KApi) { (response, data, error) in
+                            if let error = error {
+                                completion(nil, error)
+                                return
+                            }
+                            
+                            if let data = data {
+                                completion(try? SdkJSONDecoder.customSecondsSince1970.decode(UserShippingAddresses.self, from: data), nil)
+                                return
+                            }
+                            
+                            completion(nil, SdkError())
+        }
+    }
+    
     func setUI() {
         [kb, kb2, profileImageView, infoLabel].forEach {
             view.addSubview($0)
