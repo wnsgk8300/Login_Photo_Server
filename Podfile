@@ -5,6 +5,9 @@ target 'Login_Photo_Server' do
   use_frameworks!
 
   # Pods for Login_Photo_Server
-  #  pod 'Firebase/Auth'
-  #  pod 'GoogleSignIn'
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
+    pod 'Firebase/Analytics'
+    pod 'KakaoSDK'
+    pod 'KakaoSDKUser'
 end
