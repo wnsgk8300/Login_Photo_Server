@@ -12,6 +12,12 @@
 		4B3BC68E26CF692000F4ABD6 /* PersonDataModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC68D26CF692000F4ABD6 /* PersonDataModel.swift.swift */; };
 		4B3BC69026CF6D6900F4ABD6 /* GetPersonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC68F26CF6D6900F4ABD6 /* GetPersonDataService.swift */; };
 		4B3BC69626CF8C2100F4ABD6 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC69526CF8C2100F4ABD6 /* ViewController3.swift */; };
+		4BB4281526D3405300DAAA2C /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4281426D3405300DAAA2C /* ViewController4.swift */; };
+		4BB4281726D3466D00DAAA2C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4281626D3466D00DAAA2C /* Constant.swift */; };
+		4BB4281B26D369C500DAAA2C /* MyAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4281A26D369C500DAAA2C /* MyAlamofireManager.swift */; };
+		4BB4281D26D36A9400DAAA2C /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4281C26D36A9400DAAA2C /* BaseInterceptor.swift */; };
+		4BB4281F26D376EA00DAAA2C /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4281E26D376EA00DAAA2C /* MyLogger.swift */; };
+		4BB4282126D37B7B00DAAA2C /* MySearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4282026D37B7B00DAAA2C /* MySearchRouter.swift */; };
 		4BB5E3B526CC9E7200FE975F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5E3B426CC9E7200FE975F /* AppDelegate.swift */; };
 		4BB5E3B926CC9E7200FE975F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5E3B826CC9E7200FE975F /* ViewController.swift */; };
 		4BB5E3BE26CC9E7400FE975F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5E3BD26CC9E7400FE975F /* Assets.xcassets */; };
@@ -30,6 +36,12 @@
 		4B3BC68D26CF692000F4ABD6 /* PersonDataModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataModel.swift.swift; sourceTree = "<group>"; };
 		4B3BC68F26CF6D6900F4ABD6 /* GetPersonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPersonDataService.swift; sourceTree = "<group>"; };
 		4B3BC69526CF8C2100F4ABD6 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		4BB4281426D3405300DAAA2C /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		4BB4281626D3466D00DAAA2C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		4BB4281A26D369C500DAAA2C /* MyAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlamofireManager.swift; sourceTree = "<group>"; };
+		4BB4281C26D36A9400DAAA2C /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
+		4BB4281E26D376EA00DAAA2C /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
+		4BB4282026D37B7B00DAAA2C /* MySearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchRouter.swift; sourceTree = "<group>"; };
 		4BB5E3B126CC9E7200FE975F /* Login_Photo_Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login_Photo_Server.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB5E3B426CC9E7200FE975F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BB5E3B826CC9E7200FE975F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +92,27 @@
 			path = KakaLogin;
 			sourceTree = "<group>";
 		};
+		4BB4281326D3403B00DAAA2C /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				4BB4281926D369B000DAAA2C /* API */,
+				4BB4281426D3405300DAAA2C /* ViewController4.swift */,
+				4BB4281626D3466D00DAAA2C /* Constant.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		4BB4281926D369B000DAAA2C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4BB4281A26D369C500DAAA2C /* MyAlamofireManager.swift */,
+				4BB4282026D37B7B00DAAA2C /* MySearchRouter.swift */,
+				4BB4281C26D36A9400DAAA2C /* BaseInterceptor.swift */,
+				4BB4281E26D376EA00DAAA2C /* MyLogger.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		4BB5E3A826CC9E7200FE975F = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +134,7 @@
 		4BB5E3B326CC9E7200FE975F /* Login_Photo_Server */ = {
 			isa = PBXGroup;
 			children = (
+				4BB4281326D3403B00DAAA2C /* Alamofire */,
 				4B3BC69426CF8C0C00F4ABD6 /* KakaLogin */,
 				4B3BC69326CF8BD300F4ABD6 /* ServerWithAlamofire */,
 				4BB5E3B426CC9E7200FE975F /* AppDelegate.swift */,
@@ -241,10 +275,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB4282126D37B7B00DAAA2C /* MySearchRouter.swift in Sources */,
 				4BB5E3B926CC9E7200FE975F /* ViewController.swift in Sources */,
 				4BB5E3B526CC9E7200FE975F /* AppDelegate.swift in Sources */,
+				4BB4281726D3466D00DAAA2C /* Constant.swift in Sources */,
+				4BB4281F26D376EA00DAAA2C /* MyLogger.swift in Sources */,
 				4B3BC68E26CF692000F4ABD6 /* PersonDataModel.swift.swift in Sources */,
+				4BB4281B26D369C500DAAA2C /* MyAlamofireManager.swift in Sources */,
+				4BB4281526D3405300DAAA2C /* ViewController4.swift in Sources */,
 				4B3BC68A26CE538600F4ABD6 /* ViewController2.swift in Sources */,
+				4BB4281D26D36A9400DAAA2C /* BaseInterceptor.swift in Sources */,
 				4B3BC68C26CF2A1B00F4ABD6 /* NetworkResult.swift in Sources */,
 				4B3BC69626CF8C2100F4ABD6 /* ViewController3.swift in Sources */,
 				4B3BC69026CF6D6900F4ABD6 /* GetPersonDataService.swift in Sources */,

@@ -67,7 +67,12 @@
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
 	</array>
-    <key>KAKAO_SECURE_MODE</key>
-    <true/>
+	<key>KAKAO_SECURE_MODE</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
