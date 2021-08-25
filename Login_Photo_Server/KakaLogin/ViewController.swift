@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                     _ = oauthToken
                     // 어세스토큰
                     let accessToken = oauthToken?.accessToken
-                    
+                    print(accessToken)
                     //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                     self.setUserInfo()
                 }
@@ -65,6 +65,7 @@ class ViewController: UIViewController {
                 _ = oauthToken
                 // 어세스토큰
                 let accessToken = oauthToken?.accessToken
+                print(accessToken)
                 
                 //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
                 self.setUserInfo()
@@ -72,7 +73,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     func setUserInfo() {
         
         UserApi.shared.me() {(user, error) in
@@ -111,7 +112,6 @@ class ViewController: UIViewController {
                                 completion(nil, error)
                                 return
                             }
-                            
                             if let data = data {
                                 completion(try? SdkJSONDecoder.customSecondsSince1970.decode(UserShippingAddresses.self, from: data), nil)
                                 return

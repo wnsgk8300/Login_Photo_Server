@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 
+//json data 송수신
 class ViewController3: UIViewController, WKUIDelegate {
     var webView: WKWebView!
     let dic: Dictionary = ["message": "OK"]
