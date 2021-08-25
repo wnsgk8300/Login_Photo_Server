@@ -8,19 +8,25 @@
 import Foundation
 import AuthenticationServices
 
-class AppleLoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-    //버튼을 눌렀을 때 Apple 로그인을 모달 시트로 표시함
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
-    }
-    
-    
+class AppleLoginViewController: UIViewController {
+   
+    // Apple ID 로그인 버튼 생성
     let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .whiteOutline)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         setUI()
+    }
+}
+
+extension AppleLoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    //버튼을 눌렀을 때 Apple 로그인을 모달 시트로 표시함
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Login Error")
     }
     // Apple ID 연동 성공 시
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -32,9 +38,28 @@ class AppleLoginViewController: UIViewController, ASAuthorizationControllerDeleg
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
             
-            print("User ID: \(userIdentifier)")
-            print("User name: \(String(describing: fullName))")
-            print("User emsil: \(String(describing: email))")
+            if let authorizationCode = appleIDCredential.authorizationCode,
+               let identityToken = appleIDCredential.identityToken,
+               let authString = String(data: authorizationCode, encoding: .utf8),
+               let tokenString = String(data: identityToken, encoding: .utf8) {
+                print("authorizationCode: \(authorizationCode)")
+                print("identityToken: \(identityToken)")
+                print("authString: \(authString)")
+                print("tokenString: \(tokenString)")
+                
+            }
+            
+            print("User ID : \(userIdentifier)")
+            print("User Email : \(email ?? "")")
+            print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+            
+        case let passwordCredential as ASPasswordCredential:
+        // Sign in using an existing iCloud Keychain credential.
+            let username = passwordCredential.user
+            let password = passwordCredential.password
+            print("username: \(username)")
+            print("password: \(password)")
+            
         default:
             break
         }
@@ -44,7 +69,7 @@ class AppleLoginViewController: UIViewController, ASAuthorizationControllerDeleg
 extension AppleLoginViewController {
     @objc
     func appleSignInButtonPress(_ sender: ASAuthorizationAppleIDButton) {
-            let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = [.fullName, .email]
         
@@ -62,6 +87,7 @@ extension AppleLoginViewController {
     }
     func setDetails() {
         authorizationButton.addTarget(self, action: #selector(appleSignInButtonPress(_:)), for: .touchUpInside)
+        
         
     }
     func setLayout() {
