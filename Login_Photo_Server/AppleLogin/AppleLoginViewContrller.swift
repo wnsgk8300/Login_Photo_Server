@@ -7,6 +7,7 @@
 
 import Foundation
 import AuthenticationServices
+import Alamofire
 
 class AppleLoginViewController: UIViewController {
    
@@ -18,6 +19,10 @@ class AppleLoginViewController: UIViewController {
         view.backgroundColor = .red
         setUI()
     }
+}
+//Alamofire
+extension AppleLoginViewController {
+    
 }
 
 extension AppleLoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
@@ -100,3 +105,4 @@ extension AppleLoginViewController {
         }
     }
 }
+
