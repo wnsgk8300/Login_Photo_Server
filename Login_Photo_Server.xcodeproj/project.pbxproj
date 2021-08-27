@@ -12,6 +12,7 @@
 		4B3BC68E26CF692000F4ABD6 /* PersonDataModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC68D26CF692000F4ABD6 /* PersonDataModel.swift.swift */; };
 		4B3BC69026CF6D6900F4ABD6 /* GetPersonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC68F26CF6D6900F4ABD6 /* GetPersonDataService.swift */; };
 		4B3BC69626CF8C2100F4ABD6 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BC69526CF8C2100F4ABD6 /* ViewController3.swift */; };
+		4B479C1126D8A37F00FEDFEB /* AlamoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479C1026D8A37F00FEDFEB /* AlamoVC.swift */; };
 		4B72494726D4893100DC0A05 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72494626D4893100DC0A05 /* ViewController5.swift */; };
 		4B72494B26D4B65400DC0A05 /* AppleLoginViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72494A26D4B65400DC0A05 /* AppleLoginViewContrller.swift */; };
 		4B72494D26D4B66300DC0A05 /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B72494C26D4B66300DC0A05 /* AppleLoginManager.swift */; };
@@ -39,6 +40,7 @@
 		4B3BC68D26CF692000F4ABD6 /* PersonDataModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataModel.swift.swift; sourceTree = "<group>"; };
 		4B3BC68F26CF6D6900F4ABD6 /* GetPersonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPersonDataService.swift; sourceTree = "<group>"; };
 		4B3BC69526CF8C2100F4ABD6 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		4B479C1026D8A37F00FEDFEB /* AlamoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoVC.swift; sourceTree = "<group>"; };
 		4B72494626D4893100DC0A05 /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
 		4B72494826D4B5A900DC0A05 /* Login_Photo_Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Login_Photo_Server.entitlements; sourceTree = "<group>"; };
 		4B72494A26D4B65400DC0A05 /* AppleLoginViewContrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewContrller.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		4B479C0C26D7483900FEDFEB /* AlamofireTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				4B479C1026D8A37F00FEDFEB /* AlamoVC.swift */,
 			);
 			path = AlamofireTutorial;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				4B3BC68A26CE538600F4ABD6 /* ViewController2.swift in Sources */,
 				4BB4281D26D36A9400DAAA2C /* BaseInterceptor.swift in Sources */,
 				4B3BC68C26CF2A1B00F4ABD6 /* NetworkResult.swift in Sources */,
+				4B479C1126D8A37F00FEDFEB /* AlamoVC.swift in Sources */,
 				4B3BC69626CF8C2100F4ABD6 /* ViewController3.swift in Sources */,
 				4B3BC69026CF6D6900F4ABD6 /* GetPersonDataService.swift in Sources */,
 			);

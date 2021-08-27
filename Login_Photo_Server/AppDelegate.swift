@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             }
     }
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = ViewController()
+            window?.rootViewController = AlamoVC()
             window?.backgroundColor = .systemBackground
             window?.makeKeyAndVisible()
             return true
