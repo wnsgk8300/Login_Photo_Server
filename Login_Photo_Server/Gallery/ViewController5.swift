@@ -41,3 +41,12 @@ class ViewController5: UIViewController, UIImagePickerControllerDelegate & UINav
     
     
 }
+
+extension ViewController5 {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError()
+        }
+        
+    }
+}

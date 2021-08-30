@@ -20,24 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //        FirebaseApp.configure()
                 KakaoSDKCommon.initSDK(appKey: "36f8f2bc86cec81d0b898b31e6dd41fd")
         
-        if (AuthApi.hasToken()) {
-            UserApi.shared.accessTokenInfo { (_, error) in
-                if let error = error {
-                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
-                        print("로그인 필요1")
-                    }
-                    else{
-                        //기타 에러
-                    }
-                }
-                else {
-                    print("토큰 유효성 체크 성공(필요 시 토큰 갱신됨)")
-                }
-            }
-        }
-        else {
-            print("로그인 필요2")
-        }
+//        if (AuthApi.hasToken()) {
+//            UserApi.shared.accessTokenInfo { (_, error) in
+//                if let error = error {
+//                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+//                        print("로그인 필요1")
+//                    }
+//                    else{
+//                        //기타 에러
+//                    }
+//                }
+//                else {
+//                    print("토큰 유효성 체크 성공(필요 시 토큰 갱신됨)")
+//                }
+//            }
+//        }
+//        else {
+//            print("로그인 필요2")
+//        }
         
 //     앱 실행 시 로그인 상태 확인
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             }
     }
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = AlamoVC()
+            window?.rootViewController = AppleLoginViewController()
             window?.backgroundColor = .systemBackground
             window?.makeKeyAndVisible()
             return true
