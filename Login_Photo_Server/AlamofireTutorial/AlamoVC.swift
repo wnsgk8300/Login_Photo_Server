@@ -10,12 +10,22 @@ import UIKit
 import Alamofire
 
 class AlamoVC: UIViewController {
+//    let url = "https://ptsv2.com/t/nppsl-1630637392/post"
+//    let url = "https://httpbin.org/post"
+    let url = "http://127.0.0.1:8000/auth/signup"
+    let image1 = UIImage(named: "NaverLogo")
+    let image2 = UIImage(named: "ip")
+    
+//    let headers: HTTPHeaders = ["Content-type": "multipart/form-data", "Content-Disposition" : "form-data"]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getTest()
+//                getTest()
         postTest()
-        
+//        uploadPhoto(media: image2!, params: ["1": "2"], fileName: "df")
+//        upload1()
     }
+    
     /*method 에 어떤 통신방식 사용할건지 넣고
      parameters 는 밑에서 post 통신할 때 보내볼거고요
      encoding 은 URL 이니까 URLEncoding 적어주시고요
@@ -23,12 +33,15 @@ class AlamoVC: UIViewController {
      validate 는 확인 코드입니다.
      responseJSON 이 정보를 받는 부분입니다.*/
     func getTest() {
-        let url = "https://jsonplaceholder.typicode.com/todos/1"
         AF.request(url,
+                   //어떤 방식으로 통신을 하나
                    method: .get,
                    parameters: nil,
+                   //url이니까 urlencoging
                    encoding: URLEncoding.default,
+                   //json형식으로 받게끔
                    headers: ["Content-Type":"application/json", "Accept":"application/json"])
+            //확인 코드                        정보 받는 부분
             .validate(statusCode: 200..<300).responseJSON { (json) in
                 //가져온 데이터 활용
                 print("AlamoVC")
@@ -38,7 +51,6 @@ class AlamoVC: UIViewController {
     }
     
     func postTest() {
-        let url = "https://ptsv2.com/t/xwc5t-1630039848/post"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -63,27 +75,37 @@ class AlamoVC: UIViewController {
             }
         }
     }
-    
-    func sendImg() {
-        let url = "file upload rul"
-        let image = UIImage(named: "")
-        let imgData = image!.jpegData(compressionQuality: 0.2)!
-        AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(Data("value".utf8), withName: "key")
-            multipartFormData.append(imgData, withName: "key", fileName: "a.jpg", mimeType: "image/jpg")
-        }, to: url).responseJSON { response in
+    func uploadPhoto(media: UIImage,params: [String:String],fileName: String){
+        let headers: HTTPHeaders = [
+            "Content-type": "multipart/form-data"
+        ]
+        AF.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(media.jpegData(
+                    compressionQuality: 1)!,
+                    withName: "1",
+                    fileName: "\(fileName).jpeg", mimeType: "image/jpeg"
+                )
+                for param in params {
+                    let value = param.value.data(using: String.Encoding.utf8)!
+                    multipartFormData.append(value, withName: param.key)
+                }
+            },
+            to: url,
+            method: .post ,
+            headers: headers
+        )
+        .response { response in
             print(response)
         }
-        
-        let fileURL = Bundle.main.url(forResource: "video", withExtension: "mov")
-
-        AF.upload(fileURL!, to: "https://httpbin.org/post")
-            .uploadProgress { progress in
-                print("Upload Progress: \(progress.fractionCompleted)")
-            }
-            .downloadProgress { progress in
-                print("Download Progress: \(progress.fractionCompleted)")
-            }
     }
-
+//    func upload1() {
+//        let headers: HTTPHeaders = ["Content-type": "multipart/form-data"]
+//
+//        AF.upload(multipartFormData: { (multipartFormData) in
+//            multipartFormData.append(Data("photo".utf8), withName: "iphonePhoto")
+//            multipartFormData.append(self.image2!.jpegData(compressionQuality: 1)!, withName: "iphone", fileName: "ip", mimeType: "image/jpeg")
+//        }, to: url,
+//        headers: headers)
+//    }
 }

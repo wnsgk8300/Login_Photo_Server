@@ -74,5 +74,35 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppTransportSecurity
+[출처] Alamofire 를 이용해서 네트워크 통신하기|작성자 뜽뜽
+
+</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://127.0.0.1:8000/auth/signup</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads
+[출처] Alamofire 를 이용해서 네트워크 통신하기|작성자 뜽뜽
+
+NSExceptionAllowsInsecureHTTPLoads
+[출처] Alamofire 를 이용해서 네트워크 통신하기|작성자 뜽뜽
+
+</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+		<key>NSAllowsArbitraryLoads
+[출처] Alamofire 를 이용해서 네트워크 통신하기|작성자 뜽뜽
+
+NSAllowsArbitraryLoads
+[출처] Alamofire 를 이용해서 네트워크 통신하기|작성자 뜽뜽
+
+</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

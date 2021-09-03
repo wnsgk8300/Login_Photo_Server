@@ -28,6 +28,7 @@
 		4BB5E3C126CC9E7400FE975F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5E3BF26CC9E7400FE975F /* LaunchScreen.storyboard */; };
 		4BB5E3CA26CCA07800FE975F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB5E3C926CCA07800FE975F /* SnapKit */; };
 		4BB5E3CE26CCA40700FE975F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB5E3CD26CCA40700FE975F /* GoogleService-Info.plist */; };
+		4BEAA38D26DDFDD900D7B459 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEAA38C26DDFDD900D7B459 /* PhotoViewController.swift */; };
 		9EA65AAD8D6F0173C5A69B4A /* Pods_Login_Photo_Server.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30793298168C87105294B297 /* Pods_Login_Photo_Server.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		4BB5E3C026CC9E7400FE975F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BB5E3C226CC9E7400FE975F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BB5E3CD26CCA40700FE975F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BEAA38C26DDFDD900D7B459 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		4BB5E3B326CC9E7200FE975F /* Login_Photo_Server */ = {
 			isa = PBXGroup;
 			children = (
+				4BEAA38B26DDFDC600D7B459 /* Photo */,
 				4B479C0C26D7483900FEDFEB /* AlamofireTutorial */,
 				4B72494926D4B63300DC0A05 /* AppleLogin */,
 				4B72494826D4B5A900DC0A05 /* Login_Photo_Server.entitlements */,
@@ -177,12 +180,20 @@
 				4B3BC69326CF8BD300F4ABD6 /* ServerWithAlamofire */,
 				4BB5E3B426CC9E7200FE975F /* AppDelegate.swift */,
 				4BB5E3BD26CC9E7400FE975F /* Assets.xcassets */,
-				4BB5E3BF26CC9E7400FE975F /* LaunchScreen.storyboard */,
 				4BB5E3C226CC9E7400FE975F /* Info.plist */,
 				4BB5E3CD26CCA40700FE975F /* GoogleService-Info.plist */,
+				4BB5E3BF26CC9E7400FE975F /* LaunchScreen.storyboard */,
 				4B3BC69526CF8C2100F4ABD6 /* ViewController3.swift */,
 			);
 			path = Login_Photo_Server;
+			sourceTree = "<group>";
+		};
+		4BEAA38B26DDFDC600D7B459 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				4BEAA38C26DDFDD900D7B459 /* PhotoViewController.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		F66C3BC73ED82BDE7764CF49 /* Frameworks */ = {
@@ -318,6 +329,7 @@
 				4BB5E3B526CC9E7200FE975F /* AppDelegate.swift in Sources */,
 				4BB4281726D3466D00DAAA2C /* Constant.swift in Sources */,
 				4BB4281F26D376EA00DAAA2C /* MyLogger.swift in Sources */,
+				4BEAA38D26DDFDD900D7B459 /* PhotoViewController.swift in Sources */,
 				4B3BC68E26CF692000F4ABD6 /* PersonDataModel.swift.swift in Sources */,
 				4B72494B26D4B65400DC0A05 /* AppleLoginViewContrller.swift in Sources */,
 				4B72494726D4893100DC0A05 /* ViewController5.swift in Sources */,

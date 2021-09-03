@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         view.backgroundColor = .brown
+        profileImageView.image = UIImage(named: "ip")
     }
     
     //앱으로 로그인
